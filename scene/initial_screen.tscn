@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdnvnvu1bbqg7"]
+
+[ext_resource type="Script" uid="uid://055fy50hyff4" path="res://script/tela_inicial.gd" id="1_q3cv7"]
+[ext_resource type="Texture2D" uid="uid://c3v17cu7bfuew" path="res://icon.svg" id="2_1bk63"]
+
+[node name="InitialScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q3cv7")
+
+[node name="InitialButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 379.0
+offset_right = 650.0
+offset_bottom = 509.0
+
+[node name="Sprite2D" type="Sprite2D" parent="InitialButton"]
+z_index = -1
+position = Vector2(66, 64)
+texture = ExtResource("2_1bk63")
+
+[connection signal="pressed" from="InitialButton" to="." method="_on_initial_button_pressed"]
