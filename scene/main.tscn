@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdnvnvu1bbqg7"]
+
+[ext_resource type="Script" uid="uid://055fy50hyff4" path="res://script/initial_screen.gd" id="1_v0l8b"]
+[ext_resource type="Texture2D" uid="uid://c3v17cu7bfuew" path="res://icon.svg" id="2_wp4xf"]
+[ext_resource type="PackedScene" uid="uid://covgit3a5hdkc" path="res://scene/human_side.tscn" id="3_wp4xf"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0l8b")
+
+[node name="InitialScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InitialScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -130.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InitialButton" type="Button" parent="InitialScreen/VBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="InitialScreen/VBoxContainer/InitialButton"]
+position = Vector2(65, 65)
+texture = ExtResource("2_wp4xf")
+
+[node name="MarginContainer" type="MarginContainer" parent="InitialScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="CreateCharacter" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreateCharacter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -65.0
+offset_right = 234.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Human" type="Button" parent="CreateCharacter/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CreateCharacter/HBoxContainer/Human"]
+position = Vector2(65, 65)
+texture = ExtResource("2_wp4xf")
+
+[node name="VSeparator" type="VSeparator" parent="CreateCharacter/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Being" type="Button" parent="CreateCharacter/HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CreateCharacter/HBoxContainer/Being"]
+position = Vector2(65, 65)
+texture = ExtResource("2_wp4xf")
+
+[node name="HumanSide" parent="." instance=ExtResource("3_wp4xf")]
+layout_mode = 1
+
+[connection signal="pressed" from="InitialScreen/VBoxContainer/InitialButton" to="." method="_on_initial_button_pressed"]
+[connection signal="pressed" from="CreateCharacter/HBoxContainer/Human" to="." method="_on_human_pressed"]
