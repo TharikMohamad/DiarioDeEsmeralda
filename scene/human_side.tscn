@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://covgit3a5hdkc"]
+[gd_scene load_steps=6 format=3 uid="uid://covgit3a5hdkc"]
 
 [ext_resource type="Texture2D" uid="uid://c3v17cu7bfuew" path="res://icon.svg" id="1_5v8xg"]
 [ext_resource type="Script" uid="uid://cxso4bm48rvhs" path="res://script/human_side.gd" id="1_ys8ky"]
@@ -8,6 +8,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Theme" id="Theme_d74jo"]
 TextEdit/styles/normal = SubResource("StyleBoxFlat_ys8ky")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ycf2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="HumanSide" type="Control"]
 layout_mode = 3
@@ -124,19 +127,33 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme = SubResource("Theme_d74jo")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_1ycf2")
+editable = false
 
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/WarriorButton" to="." method="_on_warrior_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/WarriorButton" to="." method="_on_warrior_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WarriorButton" to="." method="_on_warrior_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/SorcererButton" to="." method="_on_sorcerer_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/SorcererButton" to="." method="_on_sorcerer_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/SorcererButton" to="." method="_on_sorcerer_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ArcherButton" to="." method="_on_archer_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ArcherButton" to="." method="_on_archer_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/RogueButton" to="." method="_on_rogue_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/RogueButton" to="." method="_on_rogue_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RogueButton" to="." method="_on_rogue_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/SamuraiButton" to="." method="_on_samurai_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/SamuraiButton" to="." method="_on_samurai_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/SamuraiButton" to="." method="_on_samurai_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ClericButton" to="." method="_on_cleric_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ClericButton" to="." method="_on_cleric_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ClericButton" to="." method="_on_cleric_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/BardButton" to="." method="_on_bard_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/BardButton" to="." method="_on_bard_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BardButton" to="." method="_on_bard_button_pressed"]

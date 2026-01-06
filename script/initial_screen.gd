@@ -6,10 +6,16 @@ var initial_button: bool = false
 @onready var create_character: Control = $CreateCharacter
 @onready var human_side: Control = $HumanSide
 
+var character_data := {
+	"race": "",
+	"class": ""
+}
+
 func _ready() -> void:
 	$CreateCharacter.visible = false
 	$InitialScreen.visible = true
 	$HumanSide.visible = false
+	human_side.class_selected.connect(on_class_selected)
 
 func _process(delta: float) -> void:
 	if initial_button:
@@ -20,5 +26,13 @@ func _on_initial_button_pressed() -> void:
 	$CreateCharacter.visible = true
 
 func _on_human_pressed() -> void:
+	character_data["race"] = "human"
 	$CreateCharacter.visible = false
 	$HumanSide.visible = true
+
+func on_class_selected(classes: String):
+	character_data["class"] = classes
+
+func _on_confirm_button_pressed() -> void:
+	$HumanSide.visible = false
+	print(character_data)

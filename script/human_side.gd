@@ -1,5 +1,7 @@
 extends Control
 
+signal class_selected(sub_race: String)
+
 @onready var class_description: TextEdit = $VBoxContainer/ClassDescription
 
 var classes_description = {
@@ -55,51 +57,138 @@ Habilidade de bardo:
 "]
 }
 
+var choose_classes := ""
+
+func choose_class(type: String):
+	emit_signal("class_selected", type)
+
+
+
+func _on_warrior_button_pressed() -> void:
+	choose_classes = "Warrior"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[1][0]
+	choose_class("Warrior")
+
 func _on_warrior_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[1][0]
 	
 func _on_warrior_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Warrior":
+		$VBoxContainer/ClassDescription.visible = false
+	else:
+		$VBoxContainer/ClassDescription.visible = true
+	
+
+
+
+func _on_sorcerer_button_pressed() -> void:
+	choose_classes = "Sorcerer"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[2][0]
+	choose_class("Sorcerer")
 
 func _on_sorcerer_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[2][0]
 
 func _on_sorcerer_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Sorcerer":
+		$VBoxContainer/ClassDescription.visible = false
+	else:
+		$VBoxContainer/ClassDescription.visible = true
+
+
+
+
+func _on_archer_button_pressed() -> void:
+	choose_classes = "Archer"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[3][0]
+	choose_class("Archer")
 
 func _on_archer_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[3][0]
 
 func _on_archer_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Archer":
+		$VBoxContainer/ClassDescription.visible = false
+	else:
+		$VBoxContainer/ClassDescription.visible = true
+	
+
+
+
+func _on_rogue_button_pressed() -> void:
+	choose_classes = "Rogue"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[4][0]
+	choose_class("Rogue")
 
 func _on_rogue_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[4][0]
 
 func _on_rogue_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Rogue":
+		$VBoxContainer/ClassDescription.visible = false
+	else:
+		$VBoxContainer/ClassDescription.visible = true
+	
+
+
+
+func _on_samurai_button_pressed() -> void:
+	choose_classes = "Samurai"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[5][0]
+	choose_class("Samurai")
 
 func _on_samurai_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[5][0]
 
 func _on_samurai_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Samurai":
+		$VBoxContainer/ClassDescription.visible = false
+	else:
+		$VBoxContainer/ClassDescription.visible = true
+	
+
+
+
+func _on_cleric_button_pressed() -> void:
+	choose_classes = "Cleric"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[6][0]
+	choose_class("Cleric")
 
 func _on_cleric_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[6][0]
 
 func _on_cleric_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Cleric":
+		$VBoxContainer/ClassDescription.visible = false
+	else:
+		$VBoxContainer/ClassDescription.visible = true
+	
+
+
+
+func _on_bard_button_pressed() -> void:
+	choose_classes = "Bard"
+	$VBoxContainer/ClassDescription.visible = true
+	$VBoxContainer/ClassDescription.text = classes_description[7][0]
+	choose_class("Bard")
 
 func _on_bard_button_mouse_entered() -> void:
 	$VBoxContainer/ClassDescription.visible = true
 	$VBoxContainer/ClassDescription.text = classes_description[7][0]
 
 func _on_bard_button_mouse_exited() -> void:
-	$VBoxContainer/ClassDescription.visible = false
+	if choose_classes != "Bard":
+		$VBoxContainer/ClassDescription.visible = false
+		
