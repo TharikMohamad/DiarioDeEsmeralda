@@ -1,7 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://covgit3a5hdkc"]
+[gd_scene load_steps=13 format=3 uid="uid://covgit3a5hdkc"]
 
-[ext_resource type="Texture2D" uid="uid://c3v17cu7bfuew" path="res://icon.svg" id="1_5v8xg"]
 [ext_resource type="Script" uid="uid://cxso4bm48rvhs" path="res://script/human_side.gd" id="1_ys8ky"]
+[ext_resource type="Texture2D" uid="uid://2741t2k1ouhm" path="res://resource/warrior.png" id="2_i371p"]
+[ext_resource type="Texture2D" uid="uid://b3teu5la20wb7" path="res://resource/sorcerer.png" id="3_4t3os"]
+[ext_resource type="Texture2D" uid="uid://c3fymp7dmdp2g" path="res://resource/rogue.png" id="4_jtnbt"]
+[ext_resource type="Texture2D" uid="uid://djlipa5ecxat8" path="res://resource/bard.png" id="5_3jlvf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i371p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(1, 1, 1, 0.32549)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtnbt"]
+shadow_color = Color(1, 1, 1, 0.321569)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t3os"]
+shadow_color = Color(1, 1, 1, 0.321569)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jlvf"]
+shadow_color = Color(1, 1, 1, 0.317647)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys8ky"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -42,10 +62,12 @@ size_flags_horizontal = 4
 [node name="WarriorButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_i371p")
 
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/WarriorButton"]
 position = Vector2(65, 65)
-texture = ExtResource("1_5v8xg")
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("2_i371p")
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -54,70 +76,40 @@ layout_mode = 2
 [node name="SorcererButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_jtnbt")
 
 [node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/HBoxContainer/SorcererButton"]
 position = Vector2(65, 65)
-texture = ExtResource("1_5v8xg")
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("3_4t3os")
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-
-[node name="ArcherButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(130, 130)
-layout_mode = 2
-
-[node name="Sprite2D3" type="Sprite2D" parent="VBoxContainer/HBoxContainer/ArcherButton"]
-position = Vector2(65, 65)
-texture = ExtResource("1_5v8xg")
-
-[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="RogueButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_4t3os")
 
-[node name="Sprite2D4" type="Sprite2D" parent="VBoxContainer/HBoxContainer/RogueButton"]
-position = Vector2(64, 65)
-texture = ExtResource("1_5v8xg")
-
-[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-
-[node name="SamuraiButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(130, 130)
-layout_mode = 2
-
-[node name="Sprite2D5" type="Sprite2D" parent="VBoxContainer/HBoxContainer/SamuraiButton"]
+[node name="Sprite2D3" type="Sprite2D" parent="VBoxContainer/HBoxContainer/RogueButton"]
 position = Vector2(65, 65)
-texture = ExtResource("1_5v8xg")
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("4_jtnbt")
 
-[node name="VSeparator5" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-
-[node name="ClericButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(130, 130)
-layout_mode = 2
-
-[node name="Sprite2D6" type="Sprite2D" parent="VBoxContainer/HBoxContainer/ClericButton"]
-position = Vector2(65, 65)
-texture = ExtResource("1_5v8xg")
-
-[node name="VSeparator6" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="BardButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_3jlvf")
 
 [node name="Sprite2D7" type="Sprite2D" parent="VBoxContainer/HBoxContainer/BardButton"]
 position = Vector2(65, 65)
-texture = ExtResource("1_5v8xg")
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("5_3jlvf")
 
 [node name="Margin" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
@@ -142,18 +134,9 @@ editable = false
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/SorcererButton" to="." method="_on_sorcerer_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/SorcererButton" to="." method="_on_sorcerer_button_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/SorcererButton" to="." method="_on_sorcerer_button_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ArcherButton" to="." method="_on_archer_button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ArcherButton" to="." method="_on_archer_button_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/RogueButton" to="." method="_on_rogue_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/RogueButton" to="." method="_on_rogue_button_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RogueButton" to="." method="_on_rogue_button_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/SamuraiButton" to="." method="_on_samurai_button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/SamuraiButton" to="." method="_on_samurai_button_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/SamuraiButton" to="." method="_on_samurai_button_pressed"]
-[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ClericButton" to="." method="_on_cleric_button_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ClericButton" to="." method="_on_cleric_button_mouse_exited"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ClericButton" to="." method="_on_cleric_button_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/BardButton" to="." method="_on_bard_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/BardButton" to="." method="_on_bard_button_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BardButton" to="." method="_on_bard_button_pressed"]
